@@ -3,63 +3,74 @@ export const themeData = {
   "lastUpdated": "Last Updated",
   "navbar": [
     {
-      "text": "Home",
-      "link": "/foo/"
+      "text": "Guide",
+      "link": "/guide/"
     },
     {
-      "text": "Group",
-      "children": [
-        {
-          "link": "/group/foo.md",
-          "text": "test1"
-        },
-        "/group/bar.md"
-      ]
+      "text": "Api",
+      "link": "/api/api"
     },
-    "/bar/README.md",
     {
-      "text": "Group",
+      "text": "Plugins",
       "children": [
         {
-          "text": "SubGroup",
+          "text": "Community",
           "children": [
-            "/group/sub/foo.md",
-            "/group/sub/bar.md"
+            "/plugins/community/user1.md",
+            "/plugins/community/user2.md"
+          ]
+        },
+        {
+          "text": "webViewer",
+          "children": [
+            "/plugins/webViewer/dvsPluginEdit.md"
           ]
         }
       ]
     },
     {
-      "text": "Group 2",
-      "children": [
-        {
-          "text": "Always active",
-          "link": "/",
-          "activeMatch": "/"
-        },
-        {
-          "text": "Active on /foo/",
-          "link": "/not-foo/",
-          "activeMatch": "^/foo/"
-        }
-      ]
+      "text": "Github",
+      "link": "https://github.com/mika6/web-viewer-docs"
     }
   ],
-  "sidebar": [
-    {
-      "text": "Foo",
-      "link": "/foo/",
-      "children": [
-        {
-          "text": "github",
-          "link": "https://github.com",
-          "children": []
-        },
-        "/foo/bar.md"
-      ]
-    },
-    "/bar/README.md"
-  ],
+  "sidebar": {
+    "/guide/": [
+      {
+        "text": "Guide",
+        "children": [
+          {
+            "text": "test1",
+            "link": "test1"
+          },
+          {
+            "text": "test2",
+            "link": "test2"
+          }
+        ]
+      }
+    ],
+    "/api/": [
+      {
+        "text": "API",
+        "link": "api.md"
+      }
+    ],
+    "/plugins/": [
+      {
+        "text": "Community",
+        "children": [
+          "/plugins/community/user1.md",
+          "/plugins/community/user2.md"
+        ]
+      },
+      {
+        "text": "webViewer",
+        "children": [
+          "/plugins/webViewer/dvsPluginEdit.md"
+        ]
+      }
+    ]
+  },
   "darkMode": true,
   "notFound": [
     "页面飞了"
