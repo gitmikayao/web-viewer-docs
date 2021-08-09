@@ -9,13 +9,20 @@ module.exports = {
     serviceWorker: true,
     // theme: 'vdoing',
     themeConfig: {
-        logo: './icon.jpg',
+        logo: '/images/logo-dynamsoft-159x39.svg',
         lastUpdated: 'Last Updated', // string | boolean
         navbar: require('./nav'),
         sidebar: require('./sidebar'),
+        sidebarDepth: 4,
         darkMode: true, // default true
         notFound: ["页面飞了"],
         backToHome: "返回主页",
-
-    }
+    },
+    markdown: {
+        extractHeaders: {
+            level: [2, 3, 4]
+        }
+    },
+    host: '192.168.8.129',
+    // open: true,
 }

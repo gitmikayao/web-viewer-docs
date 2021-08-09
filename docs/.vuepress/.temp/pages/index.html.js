@@ -5,11 +5,20 @@ export const data = {
   "lang": "zh-CN",
   "frontmatter": {
     "home": true,
-    "heroImage": "/icon.jpg",
     "heroText": "WebViewer API",
     "tagline": "this is a test word",
-    "actionText": "start →",
-    "actionLink": "/pages/folder1/test1.md",
+    "actions": [
+      {
+        "text": "Get Started",
+        "link": "/api/api.html",
+        "type": "primary"
+      },
+      {
+        "text": "Introduction",
+        "link": "/guide/",
+        "type": "secondary"
+      }
+    ],
     "features": [
       {
         "title": "title 1",

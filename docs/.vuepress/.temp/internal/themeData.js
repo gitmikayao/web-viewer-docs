@@ -1,5 +1,5 @@
 export const themeData = {
-  "logo": "./icon.jpg",
+  "logo": "/images/logo-dynamsoft-159x39.svg",
   "lastUpdated": "Last Updated",
   "navbar": [
     {
@@ -38,22 +38,19 @@ export const themeData = {
       {
         "text": "Guide",
         "children": [
-          {
-            "text": "test1",
-            "link": "test1"
-          },
-          {
-            "text": "test2",
-            "link": "test2"
-          }
+          "/guide/installation.md",
+          "/guide/instance.md",
+          "/guide/uiCustomization.md",
+          "/guide/load.md",
+          "/guide/save.md",
+          "/guide/edit.md",
+          "/guide/event.md",
+          "/guide/annotation.md"
         ]
       }
     ],
     "/api/": [
-      {
-        "text": "API",
-        "link": "api.md"
-      }
+      "/api/api.md"
     ],
     "/plugins/": [
       {
@@ -71,6 +68,7 @@ export const themeData = {
       }
     ]
   },
+  "sidebarDepth": 4,
   "darkMode": true,
   "notFound": [
     "页面飞了"
@@ -84,7 +82,6 @@ export const themeData = {
   "repo": null,
   "selectLanguageText": "Languages",
   "selectLanguageAriaLabel": "Select language",
-  "sidebarDepth": 2,
   "editLink": true,
   "editLinkText": "Edit this page",
   "lastUpdatedText": "Last Updated",
