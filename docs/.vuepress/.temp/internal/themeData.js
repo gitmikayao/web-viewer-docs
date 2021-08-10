@@ -12,21 +12,7 @@ export const themeData = {
     },
     {
       "text": "Plugins",
-      "children": [
-        {
-          "text": "Community",
-          "children": [
-            "/plugins/community/user1.md",
-            "/plugins/community/user2.md"
-          ]
-        },
-        {
-          "text": "webViewer",
-          "children": [
-            "/plugins/webViewer/dvsPluginEdit.md"
-          ]
-        }
-      ]
+      "link": "/plugins/"
     },
     {
       "text": "Github",
@@ -54,16 +40,17 @@ export const themeData = {
     ],
     "/plugins/": [
       {
-        "text": "Community",
+        "text": "Plugins",
         "children": [
-          "/plugins/community/user1.md",
-          "/plugins/community/user2.md"
-        ]
-      },
-      {
-        "text": "webViewer",
-        "children": [
-          "/plugins/webViewer/dvsPluginEdit.md"
+          "/plugins/cropBox.md",
+          "/plugins/directory.md",
+          "/plugins/edit.md",
+          "/plugins/error.md",
+          "/plugins/log.md",
+          "/plugins/slide.md",
+          "/plugins/tag.md",
+          "/plugins/thumbnail",
+          "/plugins/ui"
         ]
       }
     ]

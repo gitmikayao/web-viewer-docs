@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /icon.jpg
+heroImage: /icon.jpg
 heroText: WebViewer API
 tagline: this is a test word
 actions:
@@ -14,7 +14,7 @@ features:
 - title: title 1
   details: test1
 - title: title 2
-  details:test2
+  details: test2
 - title: title 3
   details: test3
 ---

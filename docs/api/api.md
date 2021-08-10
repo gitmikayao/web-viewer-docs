@@ -1,11 +1,12 @@
 # DVS API
-## Global API
+## 1 Global API
 ### DVS.use()
-### DVS.nouse()
+### DVS.useAll()
 ### DVS.getClasses()
+### DVS.getPlugins()
 
-## Namespace
-### DVS.DataControl
+## 2 Namespace
+### 2.1 DVS.DataControl
 #### appendSync()
 #### insertSync()
 #### updateSync()
@@ -14,7 +15,7 @@
 #### removeData()
 #### updateData()
 
-### DVS.ViewerControl
+### 2.2 DVS.ViewerControl
 #### createViewer()
 #### getViewerByUid()
 #### getViewerByIndex()
@@ -23,12 +24,10 @@
 #### dispose()
 
 
-## Core
-###  <font color=#fe8el4>Viewer methods</font>
+## 3 Core
+### 3.1 Viewer methods
 #### getCurrentIndex()
-
 #### setCurrentIndex()
-
 #### getSelectedIndexes()
 #### setCurrentIndexes()
 #### selectAll()
@@ -55,22 +54,59 @@
 #### off()
 #### setCache()
 
-### Viewer properities
-
+### 3.2 Viewer properties
 #### tabMode
-
 #### currentPageCount
-
 #### showLatestPage
-
 #### postfix
-### thumbnail
+### 3.3 thumbnail
 #### setViewMode()
 #### background
-## Plugins
-## dvsPluginUi
-### viewer.fullScreen
-## dvsPluginEdit
-### viewer.rotate()
+
+## 4 Plugins
+### 4.1 dvsPluginAnnotation
+#### add()
+#### remove()
+#### update()
+#### getAnnotation()
+#### getPageAnnotation()
+#### select()
+#### rectangle()
+#### path()
+#### line()
+#### arc()
+#### ellipse()
+#### text()
+#### image()
+
+### 4.2 dvsPluginCropBox
+### 4.3 dvsPluginDirectory
+
+### 4.4 dvsPluginEdit
+#### viewer.rotate()
+#### viewer.flip()
+#### viewer.mirror()
+#### viewer.crop()
+#### viewer.changPageSize()
+
+### 4.5 dvsPluginError
+#### dvsInstance.Error.errorMessage
+#### dvsInstance.Error.errorCode
+
+### 4.6 dvsPluginLog
+#### dvsInstance.Log.clear()
+#### dvsInstance.Log.allowLog
+
+### 4.7 dvsPluginSlide
+### 4.8 dvsPluginTag
+### 4.9 dvsPluginThumbnail
+#### createThumbnail()
+#### removeThumbnail()
+#### getThumbnailContents()
+#### getPageByIndex()
+#### getPageByUid()
+
+### 4.10 dvsPluginUi
+#### viewer.fullScreen
 
 

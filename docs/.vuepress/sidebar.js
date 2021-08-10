@@ -13,44 +13,20 @@ module.exports = {
         ]
     }],
     '/api/': [
-        // {
-        //     text: "Static methods",
-        //     children: [
-        //         '/api/static.md'
-        //     ]
-        // },
-        // {
-        //     text: "Namespace",
-        //     children: [
-        //         '/api/namespace.md'
-        //     ]
-        // },
-        // {
-        //     text: "Core",
-        //     children: [
-        //         '/api/core.md'
-        //     ]
-        // },
-        // {
-        //     text: "Plugins",
-        //     children: [
-        //         '/api/plugins.md'
-        //     ]
-        // },
         '/api/api.md'
     ],
     '/plugins/': [{
-            text: 'Community',
-            children: [
-                '/plugins/community/user1.md',
-                '/plugins/community/user2.md',
-            ]
-        },
-        {
-            text: 'webViewer',
-            children: [
-                '/plugins/webViewer/dvsPluginEdit.md',
-            ]
-        }
-    ]
+        text: 'Plugins',
+        children: [
+            '/plugins/cropBox.md',
+            '/plugins/directory.md',
+            '/plugins/edit.md',
+            '/plugins/error.md',
+            '/plugins/log.md',
+            '/plugins/slide.md',
+            '/plugins/tag.md',
+            '/plugins/thumbnail',
+            '/plugins/ui',
+        ]
+    }]
 }
