@@ -1,6 +1,6 @@
 export const themeData = {
   "logo": "/images/logo-dynamsoft-159x39.svg",
-  "lastUpdated": "Last Updated",
+  "lastUpdateText": "Last Updated",
   "navbar": [
     {
       "text": "Guide",
@@ -58,9 +58,9 @@ export const themeData = {
   "sidebarDepth": 4,
   "darkMode": true,
   "notFound": [
-    "页面飞了"
+    "not found"
   ],
-  "backToHome": "返回主页",
+  "backToHome": "back to home",
   "locales": {
     "/": {
       "selectLanguageName": "English"
@@ -71,6 +71,7 @@ export const themeData = {
   "selectLanguageAriaLabel": "Select language",
   "editLink": true,
   "editLinkText": "Edit this page",
+  "lastUpdated": true,
   "lastUpdatedText": "Last Updated",
   "contributors": true,
   "contributorsText": "Contributors",

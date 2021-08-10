@@ -37,7 +37,7 @@ You can use `DVS.useAll()` to use multiple plugins:
 ```js
 DVS.useAll([
     dvs-plugin-xx1,
-    [dvs-plugin-xx2,{someOption: true}],
+    [dvs-plugin-xx2, { someOption: true }],
     dvs-plugin-xx3
 ]);
 

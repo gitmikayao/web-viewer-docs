@@ -1,6 +1,6 @@
 export const siteData = {
   "base": "/",
-  "lang": "zh-CN",
+  "lang": "en-US",
   "title": "WebViewer API",
   "description": "web viewer api",
   "head": [

@@ -2,6 +2,7 @@ import { Vuepress } from '@vuepress/client/lib/components/Vuepress'
 
 const routeItems = [
   ["v-8daa1a0e","/","",["/index.html","/README.md"]],
+  ["v-587e1e66","/api/api.html","DVS API",["/api/api","/api/api.md"]],
   ["v-fad166c4","/guide/annotation.html","Annotation",["/guide/annotation","/guide/annotation.md"]],
   ["v-34c019a3","/guide/edit.html","edition",["/guide/edit","/guide/edit.md"]],
   ["v-6765606b","/guide/event.html","event",["/guide/event","/guide/event.md"]],
@@ -11,7 +12,6 @@ const routeItems = [
   ["v-fffb8e28","/guide/","",["/guide/index.html","/guide/README.md"]],
   ["v-a21a13e0","/guide/save.html","Save a document",["/guide/save","/guide/save.md"]],
   ["v-98d244f4","/guide/uiCustomization.html","UI customization",["/guide/uiCustomization","/guide/uiCustomization.md"]],
-  ["v-587e1e66","/api/api.html","DVS API",["/api/api","/api/api.md"]],
   ["v-8d91d9b4","/plugins/cropBox.html","Crop box",["/plugins/cropBox","/plugins/cropBox.md"]],
   ["v-5a737714","/plugins/directory.html","Directory",["/plugins/directory","/plugins/directory.md"]],
   ["v-6b747b87","/plugins/edit.html","Edit",["/plugins/edit","/plugins/edit.md"]],

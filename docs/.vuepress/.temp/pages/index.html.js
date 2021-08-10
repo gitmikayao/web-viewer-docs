@@ -2,7 +2,7 @@ export const data = {
   "key": "v-8daa1a0e",
   "path": "/",
   "title": "",
-  "lang": "zh-CN",
+  "lang": "en-US",
   "frontmatter": {
     "home": true,
     "heroImage": "/icon.jpg",

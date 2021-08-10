@@ -3,6 +3,8 @@ import { defineAsyncComponent } from 'vue'
 export const pagesComponents = {
   // path: /
   "v-8daa1a0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-8daa1a0e" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/index.html.vue")),
+  // path: /api/api.html
+  "v-587e1e66": defineAsyncComponent(() => import(/* webpackChunkName: "v-587e1e66" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/api/api.html.vue")),
   // path: /guide/annotation.html
   "v-fad166c4": defineAsyncComponent(() => import(/* webpackChunkName: "v-fad166c4" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/guide/annotation.html.vue")),
   // path: /guide/edit.html
@@ -21,8 +23,6 @@ export const pagesComponents = {
   "v-a21a13e0": defineAsyncComponent(() => import(/* webpackChunkName: "v-a21a13e0" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/guide/save.html.vue")),
   // path: /guide/uiCustomization.html
   "v-98d244f4": defineAsyncComponent(() => import(/* webpackChunkName: "v-98d244f4" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/guide/uiCustomization.html.vue")),
-  // path: /api/api.html
-  "v-587e1e66": defineAsyncComponent(() => import(/* webpackChunkName: "v-587e1e66" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/api/api.html.vue")),
   // path: /plugins/cropBox.html
   "v-8d91d9b4": defineAsyncComponent(() => import(/* webpackChunkName: "v-8d91d9b4" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/plugins/cropBox.html.vue")),
   // path: /plugins/directory.html

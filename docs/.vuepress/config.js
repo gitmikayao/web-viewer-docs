@@ -1,5 +1,5 @@
 module.exports = {
-    lang: 'zh-CN',
+    lang: 'en-US',
     title: 'WebViewer API', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
     description: 'web viewer api', // meta 中的描述文字，用于SEO
     // 注入到当前页面的 HTML <head> 中的标签
@@ -10,13 +10,13 @@ module.exports = {
     // theme: 'vdoing',
     themeConfig: {
         logo: '/images/logo-dynamsoft-159x39.svg',
-        lastUpdated: 'Last Updated', // string | boolean
+        lastUpdateText: 'Last Updated',
         navbar: require('./nav'),
         sidebar: require('./sidebar'),
         sidebarDepth: 4,
         darkMode: true, // default true
-        notFound: ["页面飞了"],
-        backToHome: "返回主页",
+        notFound: ["not found"],
+        backToHome: "back to home",
     },
     markdown: {
         extractHeaders: {
