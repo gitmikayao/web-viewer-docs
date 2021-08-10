@@ -7,8 +7,9 @@ Plugins are usually used to extend the DVS system and have the following functio
 ## Using a Plugin
 Use plugins by calling `DVS.use()` or `DVS.useAll()` method.
 
-**This has to be done before calling `new DVS()`.**
-
+::: tip Notice
+This has to be done before calling `new DVS()`.
+:::
 
 ```js
 DVS.use(dvs-plugin-xx1);
@@ -48,9 +49,8 @@ const dvs = new DVS({
 ## Developing a Plugin
 The DVS plugin should expose `install` or `instancing` method. The `install` method will be called width `DVS` constructor as the first argument. The `instancing` method will be called width  `DVS` instance as the first argument.
 
-:::: code-group
-::: code-group-item install
 ```js
+// install
 const dvs-plugin-xxx1 = {
     install(DVS){
         // 1. add some global method to DVS
@@ -67,10 +67,8 @@ const dvs-plugin-xxx1 = {
         classes.oldClass = newClass;
     }
 }
-```
-:::
-::: code-group-item instancing
-```js
+
+// instancing
 import Library from 'xxx';
 
 const dvs-plugin-xxx1 = {
@@ -81,8 +79,6 @@ const dvs-plugin-xxx1 = {
     }
 }
 ```
-:::
-::::
 
 ## Plugins
 There are some default plugins provided by DVS.
@@ -95,5 +91,5 @@ There are some default plugins provided by DVS.
 | [dvsLog](./log.md) | Collect the log message. |
 | [dvsSlide](./slide.md) | Add a slide function to main view to switch the current page, it is valid on single page mode only. |
 | [dvsTag](./tag.md) | Add tag function to DVS and manage the tag. |
-| [dvsThumbnail](./thumbnail.md) | Add thumbnail function to viewer.The plugin `dvs-ui` is needed if show the thumbnail in the html.|
+| [dvsThumbnail](./thumbnail.md) | Add thumbnail function to viewer.The plugin `dvsUi` is needed if show the thumbnail in the html.|
 | [dvsUi](./ui.md) | Add ui customization function to DVS. |

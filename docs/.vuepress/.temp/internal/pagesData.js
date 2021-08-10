@@ -1,8 +1,6 @@
 export const pagesData = {
   // path: /
   "v-8daa1a0e": () => import(/* webpackChunkName: "v-8daa1a0e" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/index.html.js").then(({ data }) => data),
-  // path: /api/api.html
-  "v-587e1e66": () => import(/* webpackChunkName: "v-587e1e66" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/api/api.html.js").then(({ data }) => data),
   // path: /guide/annotation.html
   "v-fad166c4": () => import(/* webpackChunkName: "v-fad166c4" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/guide/annotation.html.js").then(({ data }) => data),
   // path: /guide/edit.html
@@ -21,6 +19,8 @@ export const pagesData = {
   "v-a21a13e0": () => import(/* webpackChunkName: "v-a21a13e0" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/guide/save.html.js").then(({ data }) => data),
   // path: /guide/uiCustomization.html
   "v-98d244f4": () => import(/* webpackChunkName: "v-98d244f4" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/guide/uiCustomization.html.js").then(({ data }) => data),
+  // path: /api/api.html
+  "v-587e1e66": () => import(/* webpackChunkName: "v-587e1e66" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/api/api.html.js").then(({ data }) => data),
   // path: /plugins/cropBox.html
   "v-8d91d9b4": () => import(/* webpackChunkName: "v-8d91d9b4" */"E:/code/web-viewer-docs/docs/.vuepress/.temp/pages/plugins/cropBox.html.js").then(({ data }) => data),
   // path: /plugins/directory.html
