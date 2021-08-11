@@ -19,7 +19,7 @@ const dvs = new DVS({
 This plugin will add some method to the instance of Viewer class.
 ### rotate()
 - **Description:** Rotate the pages according to the index.
-- **Argument:** 
+- **Arguments:** 
   - `{ number } angle` - the rotation angle.
   - `{ number | Array<number> } [index] | [indexes]` - the indexes of the rotated pages.
 - **Returns:** `{ boolean }`
@@ -38,7 +38,7 @@ viewer.rotate(90, [ 0, 2, 5 ]);
 
 ### flip()
 - **Description:** Flip the pages according to the index.
-- **Argument:** 
+- **Arguments:** 
   - `{ number | Array<number> } [index] | [indexes]` - the indexes of the rotated pages.
 - **Returns:** `{ boolean }`
 - **Usage:**
@@ -56,7 +56,7 @@ viewer.flip([ 0, 2, 5 ]);
 
 ### mirror()
 - **Description:** Mirror the pages according to the index.
-- **Argument:** 
+- **Arguments:** 
   - `{ number | Array<number> } [index] | [indexes]` - the indexes of the rotated pages.
 - **Returns:** `{ boolean }`
 - **Usage:**
@@ -74,7 +74,7 @@ viewer.mirror([ 0, 2, 5 ]);
 
 ### crop()
 - **Description:** Crop the page.
-- **Argument:** 
+- **Arguments:** 
   - `{ number } left` - the distance between the left side of crop box and the left side of the page.
   - `{ number } top` - the distance between the top side of crop box and the top side of the page.
   - `{ number } width` - the width of the crop box.
@@ -89,7 +89,7 @@ viewer.crop(50, 50, 100, 100);
 
 ### changePageSize()
 - **Description:** Crop the page.
-- **Argument:** 
+- **Arguments:** 
   - `{ number } width` - the new width of the current page.
   - `{ number } height` - the new height of the current page.
 - **Returns:** `{ boolean }`

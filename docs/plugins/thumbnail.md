@@ -1,9 +1,25 @@
 # Thumbnail
+This plugin extends the Viewer class and add thumbnail function to viewer.
+
+## Usage
+```js
+import dvsThumbnail from 'xxx';
+import DVS from 'xxx';
+
+// use plugin
+DVS.use(dvsThumbnail);
+
+// initialize DVS
+const dvs = new DVS({
+    // ... config
+})
+```
+**See also:** [Using a Plugin](./README.md#using-a-plugin)
 
 ## Viewer API
 ### createThumbnail()
 - **Description:** Create a thumbnail instance according to the configuration.
-- **Argument:** 
+- **Arguments:** 
   - `{ thumbnailConfigObject } [config]` - the configuration of thumbnail.
 - **Returns:** `{ Thumbnail }` - an instance of `Thumbnail` class.
 - **Usage:**
@@ -14,7 +30,7 @@ const thumbnail = viewer.createThumbnail({//...});
 
 ### removeThumbnail()
 - **Description:** Remove a thumbnail instance from a viewer instance.
-- **Argument:** 
+- **Arguments:** 
   - `{ Thumbnail | string } thumbnail | uid` - the instance of thumbnail or the uid.
 - **Returns:** `{ boolean }`
 - **Usage:**
@@ -34,7 +50,7 @@ viewer.getThumbnailContents();
 
 ### getPageByIndex()
 - **Description:** Get thumbnail item by index.
-- **Argument:** 
+- **Arguments:** 
   - `{ number } index` - the index of thumbnail item.
 - **Returns:** `{ ThumbnailItem }`
 - **Usage:**
@@ -44,7 +60,7 @@ const thumbnailItem = viewer.getPageByIndex(1);
 ```
 ### getPageByUid()
 - **Description:** Get thumbnail item by uid.
-- **Argument:** 
+- **Arguments:** 
   - `{ string } uid` - the uid of thumbnail item.
 - **Returns:** `{ ThumbnailItem }`
 - **Usage:**
@@ -57,7 +73,7 @@ const thumbnailItem = viewer.getPageByUid(uid);
 ## Thumbnail API
 ### setViewMode()
 - **Description:** Set the number of columns and rows when show thumbnail on the webpage.
-- **Argument:** 
+- **Arguments:** 
   - `{ number } column` - the number of thumbnail item columns.
   - `{ number } row` - the number of thumbnail item rows.
 - **Returns:** `{ boolean }`
@@ -70,7 +86,7 @@ thumbnail.setViewMode(2, 3);
 
 ### on()
 - **Description:** Listen a event and bind a callback.
-- **Argument:** 
+- **Arguments:** 
   - `{ string } eventName` - event name.
   - `{ (...pram:Array<any>)=>any } callback` - callback of the event.
 - **Returns:** `{ boolean }`
@@ -83,7 +99,7 @@ thumbnail.on(eventName, ()=>{//...});
 
 ### emit()
 - **Description:** Emit an event, allow one or more parameters to be passed.
-- **Argument:** 
+- **Arguments:** 
   - `{ string } eventName` - event name.
   - `{ ...Array<any> } [param]` - the passed parameters.
 - **Returns:** `{ boolean }`
@@ -98,7 +114,7 @@ thumbnail.on(eventName, ...param);
 - **Description:** Unbind an event callback. 
   - if a callback function is passed, only that callback function is unbound.
   - otherwise, all callbacks under that event are unbound.
-- **Argument:** 
+- **Arguments:** 
   - `{ string } eventName` - event name.
   - `{ (...pram:Array<any>)=>any } [callback]` - callback of the event.
 - **Returns:** `{ boolean }`
