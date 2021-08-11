@@ -241,7 +241,7 @@ const viewer1 = dvs.ViewerControl.getViewerByUid("viewerUidString");
 ### getViewerByIndex()
 - **Description:** Get viewer by index.
 - **Arguments:** 
-  - `{ number } index` - the index of the viewer.
+  - `{ number } index` - the index of the viewer, it is 0-based.
 - **Returns:** `{ Viewer }`
 - **Usage:**
 ```js
@@ -275,7 +275,7 @@ const viewerList = dvs.ViewerControl.getViewerList();
 
 ## Viewer Methods
 ### getCurrentIndex()
-- **Description:** Get current index by index.
+- **Description:** Get current index.
 - **Returns:** `{ number }`
 - **Usage:**
 ```js
@@ -283,9 +283,9 @@ const currentIndex = viewer.getCurrentIndex();
 ```
 
 ### setCurrentIndex()
-- **Description:** Set the current index
+- **Description:** Set the current index.
 - **Arguments:** 
-  - `{ number } index` - the number of the index to be set as the current index.
+  - `{ number } index` - the number of the index to be set as the current index, the index 0-based.
 - **Returns:** `{ boolean }`
 - **Usage:**
 ```js
@@ -294,13 +294,13 @@ viewer.setCurrentIndex(1);
 
 ### getSelectedIndexes()
 - **Description:** Get the selected page indexes, it is an array.
-- **Returns:** `{ Array<number> }` - an array of the selected page index
+- **Returns:** `{ Array<number> }` - an array of the selected page index, the index is 0-based.
 - **Usage:**
 ```js
 const currentIndex = viewer.getSelectedIndexes();
 ```
 ### setSelectedIndexes()
-- **Description:** Set the current index
+- **Description:** Set the current index.
 - **Arguments:** 
   - `{ Array<number> } indexes` - the array of the selected page index.
 - **Returns:** `{ boolean }`
@@ -317,28 +317,228 @@ viewer.setSelectedIndexes([0, 1, 5]);
 viewer.selectAll();
 ```
 
-### removeAsync()
+### removeSync()
+- **Description:** Remove some pages of the current file from DVS storage, this api accept a number of index or an Array of index.
+- **Arguments:** 
+  - `{ number | Array<number> } index | indexes` - a number of index or an array of index.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+// 1. pass a number of index
+viewer.removeSync(2);
+
+// 2. pass an array of index
+viewer.removeSync([0, 1, 4]);
+```
 ### removeAllSync()
+- **Description:** Remove all the pages of current file from DVS storage, this api accept a number of index or an Array of index.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+viewer.removeAllSync();
+```
 ### switchPage()
+- **Description:** Switch the positions of two pages specified by the index.
+- **Arguments:** 
+  - `{ number } index1` - a number of one page index.
+  - `{ number } index2` - a number of the another page index.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+// switch the positions on page 0 and page 6
+viewer.switchPage(0, 6);
+```
+
 ### movePage()
-### setViewMode()
+- **Description:** Move a page from one position to another position.
+- **Arguments:** 
+  - `{ number } index` - the target index of the page.
+  - `{ number } newIndex` - the new index to be moved to.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+// move page 0 to the position of page 6
+viewer.movePage(0, 6);
+```
+
 ### nextPage()
+- **Description:** Set the next page as the current page. The index of next page is `currentIndex + 1`. If the current page is the last page, the next page will keep the current index. If the total number of pages is `0`, this api will return `-1`;
+- **Returns:** `{ number }`
+- **Usage:**
+```js
+viewer.nextPage();
+```
+
 ### prevPage()
+- **Description:** Set the previous page as the current page. The index of next page is `currentIndex - 1`. If the current page is the first page, the previous page will keep the current index. If the total number of pages is `0`, this api will return `-1`;
+- **Returns:** `{ number }`
+- **Usage:**
+```js
+viewer.prevPage();
+```
+
 ### firstPage()
+- **Description:** Set the first page as the current page. If the total number of pages is `0`, this api will return `-1`;
+- **Returns:** `{ number }`
+- **Usage:**
+```js
+viewer.firstPage();
+```
+
 ### lastPage()
+- **Description:** Set the last page as the current page. If the total number of pages is `0`, this api will return `-1`;
+- **Returns:** `{ number }`
+- **Usage:**
+```js
+viewer.firstPage();
+```
+
 ### gotoPage()
+- **Description:** Set the page specified by index as the current page. If the total number of pages is `0`, this api will return `-1`;
+- **Arguments:** 
+  - `{ number } index` - the target index of the page.
+- **Returns:** `{ number }`
+- **Usage:**
+```js
+viewer.gotoPage(6);
+```
+
 ### getIndexByUid()
+- **Description:** Get the page index by the uid of the page.
+- **Arguments:** 
+  - `{ string } uid` - the uid of the page.
+- **Returns:** `{ number }`
+- **Usage:**
+```js
+const index = viewer.getIndexByUid("pageUidString");
+console.log(index); // 0
+```
 ### getUidByIndex()
+- **Description:** Get the page uid by the index of the page.
+- **Arguments:** 
+  - `{ number } index` - the index of the page.
+- **Returns:** `{ string }`
+- **Usage:**
+```js
+const uid = viewer.getUidByIndex(0);
+console.log(uid); // "pageUidString"
+```
+
 ### getRealTimeMetadataByIndex()
+- **Description:** Get the real time metadata of the page specified by the index.
+- **Arguments:** 
+  - `{ number } index` - the index of the page.
+- **Returns:** `{ metadata }`
+  - `metadata:`
+    - `width: number`
+    - `height: number`
+- **Usage:**
+```js
+const metadata = viewer.getRealTimeMetadataByIndex(0);
+console.log(metadata); // {width: 500, height: 500}
+```
+
 ### getMetadataByIndex()
+- **Description:** Get the metadata of the page specified by the index.
+- **Arguments:** 
+  - `{ number } index` - the index of the page.
+- **Returns:** `{ metadata }`
+  - `metadata:`
+    - `width: number`
+    - `height: number`
+- **Usage:**
+```js
+const metadata = viewer.getMetadataByIndex(0);
+console.log(metadata); // {width: 500, height: 500}
+```
+
 ### setMetadataByIndex()
+- **Description:** Set the metadata of the page specified by the index.
+- **Arguments:** 
+  - `{ number } index` - the index of the page.
+  - `{ metadata } new metadata` - the new metadata of the page.
+    - `metadata:`
+      - `width: number`
+      - `height: number`
+- **Returns:** `{ metadata }`
+- **Usage:**
+```js
+viewer.setMetadataByIndex(0, {width: 300, height: 300});
+const metadata = viewer.getMetadataByIndex(0);
+console.log(metadata); // {width: 300, height: 300}
+```
+
 ### getCustomDataByIndex()
+- **Description:** get the customData of the page specified by the index.
+- **Arguments:** 
+  - `{ number } index` - the index of the page.
+- **Returns:** `{ any }`
+- **Usage:**
+```js
+const customData = viewer.getCustomDataByIndex(0);
+console.log(customData); // any
+```
 ### getCustomDataByUid()
+- **Description:** Get the customData of the page specified by the uid.
+- **Arguments:** 
+  - `{ string } index` - the uid of the page.
+- **Returns:** `{ any }`
+- **Usage:**
+```js
+const customData = viewer.getCustomDataByUid("pageUidString");
+console.log(customData); // any
+```
+
 ### render()
+- **Description:** Re-render all the elements of the viewer on the webpage.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+viewer.render();
+```
+
 ### on()
+- **Description:** Listen a event and bind a callback.
+- **Arguments:** 
+  - `{ string } eventName` - event name.
+  - `{ (...pram:Array<any>)=>any } callback` - callback of the event, it is optional.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+viewer.on(eventName, ()=>{//...}); 
+```
+
 ### emit()
+- **Description:** Emit an event, allow one or more parameters to be passed.
+- **Arguments:** 
+  - `{ string } eventName` - event name.
+  - `{ ...Array<any> } [param]` - the passed parameters.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+viewer.on(eventName, ...param); 
+```
+
 ### off()
+- **Description:** Unbind an event callback. 
+  - if a callback function is passed, only that callback function is unbound.
+  - otherwise, all callbacks under that event are unbound.
+- **Arguments:** 
+  - `{ string } eventName` - event name.
+  - `{ (...pram:Array<any>)=>any } [callback]` - callback of the event, it is optional.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+// 1. pass the callback
+viewer.off(eventName, callback); 
+
+// 2. don't pass the callback
+viewer.off(eventName);
+```
 ### setCache()
+
+### setViewMode()
+
 ## Viewer Properties
 ### tabMode
 ### currentPageCount

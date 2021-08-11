@@ -25,7 +25,7 @@ const dvs = new DVS({
 - **Usage:**
 ```js
 const viewer = dvs.ViewerControl.getViewerByIndex(0);
-const thumbnail = viewer.createThumbnail({//...});
+const thumbnail = viewer.createThumbnail({/**config**/});
 ```
 
 ### removeThumbnail()
@@ -80,7 +80,7 @@ const thumbnailItem = viewer.getPageByUid(uid);
 - **Usage:**
 ```js
 const viewer = dvs.ViewerControl.getViewerByIndex(0);
-const thumbnail  = viewer.createThumbnail({//...})
+const thumbnail  = viewer.createThumbnail({/**config**/})
 thumbnail.setViewMode(2, 3); 
 ```
 
@@ -93,8 +93,8 @@ thumbnail.setViewMode(2, 3);
 - **Usage:**
 ```js
 const viewer = dvs.ViewerControl.getViewerByIndex(0);
-const thumbnail  = viewer.createThumbnail({//...})
-thumbnail.on(eventName, ()=>{//...}); 
+const thumbnail  = viewer.createThumbnail({/**config**/});
+thumbnail.on(eventName, ()=>{/**config**/}); 
 ```
 
 ### emit()
@@ -106,7 +106,7 @@ thumbnail.on(eventName, ()=>{//...});
 - **Usage:**
 ```js
 const viewer = dvs.ViewerControl.getViewerByIndex(0);
-const thumbnail  = viewer.createThumbnail({//...})
+const thumbnail  = viewer.createThumbnail({/**config**/});
 thumbnail.on(eventName, ...param); 
 ```
 
@@ -116,12 +116,12 @@ thumbnail.on(eventName, ...param);
   - otherwise, all callbacks under that event are unbound.
 - **Arguments:** 
   - `{ string } eventName` - event name.
-  - `{ (...pram:Array<any>)=>any } [callback]` - callback of the event.
+  - `{ (...pram:Array<any>)=>any } [callback]` - callback of the event, it is optional.
 - **Returns:** `{ boolean }`
 - **Usage:**
 ```js
 const viewer = dvs.ViewerControl.getViewerByIndex(0);
-const thumbnail  = viewer.createThumbnail({//...})
+const thumbnail  = viewer.createThumbnail({/**config**/})
 // 1. pass the callback
 thumbnail.off(eventName, callback); 
 
