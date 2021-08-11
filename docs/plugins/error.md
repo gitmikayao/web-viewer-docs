@@ -19,7 +19,7 @@ const dvs = new DVS({
 ## API
 ### errorMessage
 - **Description:** Get the last error message.
-- **Type:** `{string}`
+- **Type:** `{ string }`
 - **Default:** 'ok.'
 - **Usage:**
 ```js
@@ -29,7 +29,7 @@ console.log(msg); // "ok."
 
 ### errorMessage
 - **Description:** Get the last error message.
-- **Type:** `{number}`
+- **Type:** `{ number }`
 - **Default:** 0
 - **Usage:**
 ```js

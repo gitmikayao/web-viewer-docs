@@ -19,14 +19,14 @@ const dvs = new DVS({
 ## API
 ### clear()
 - **Description:** Clear the logs.
-- **Returns:** `{boolean}`
+- **Returns:** `{ boolean }`
 - **Usage:**
 ```js
 const log = dvsInstance.Log.clear();
 ```
 ### allowLog
 - **Description:** Enable collect the logs of DVS or not.
-- **Type:** `{boolean}`
+- **Type:** `{ boolean }`
 - **Default:** true
 - **Usage:**
 ```js
@@ -39,7 +39,7 @@ dvsInstance.Log.allowLog = true;
 
 ### logs
 - **Description:** An array of logs.
-- **Type:** `{Array}`
+- **Type:** `{ Array<Object> }`
 - **Default:** []
 - **Usage:**
 ```js

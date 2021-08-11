@@ -42,6 +42,7 @@ export const themeData = {
       {
         "text": "Plugins",
         "children": [
+          "/plugins/annotation.md",
           "/plugins/cropBox.md",
           "/plugins/directory.md",
           "/plugins/edit.md",
