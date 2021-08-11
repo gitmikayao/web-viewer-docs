@@ -70,18 +70,18 @@ const PageLayout = classes.PageLayout;
 const plugins = DVS.getPlugins();
 ```
 
-## 2 DataControl
+## DataControl
 ### appendSync()
 - **Description:** This api is the data entry of DVS.It will append images to file named by the first argument.If the file dose not exist, it will create a new file width the first argument.
 - **Arguments:** 
   - `{ string } fileName` - target filename
   - `{ Array<AppendData> } data array` - the target data to be appended. 
-  - `AppendData:`
-    - `oriData: Blob | base64 | url`
-    - `minData: Blob | base64 | url`
-    - `metaData: {width: number, height: number}`
-    - `customData?: any`
-    - `tags?: Array<string>`
+    - `AppendData:`
+      - `oriData: Blob | base64 | url`
+      - `minData: Blob | base64 | url`
+      - `metaData: {width: number, height: number}`
+      - `customData?: any`
+      - `tags?: Array<string>`
 - **Returns:** `{ Array<string> }` An array of uid.
 - **Usage:**
 ```js
@@ -198,7 +198,7 @@ dvs.DataControl.removeData("id-string")
 });
 ```
 ### updateData()
-- **Description:** Remove data from DVS storage.
+- **Description:** Update the data.
 - **Async:** `true`
 - **Arguments:** 
   - `{ string } uid` - the id of target data.
@@ -206,7 +206,7 @@ dvs.DataControl.removeData("id-string")
 - **Returns:** `{ Promise }`
 - **Usage:**
 ```js
-dvs.DataControl.getData("id-string")
+dvs.DataControl.updateData("id-string",{someData: true})
 .then(res=>{
     console.log(res);
 });
@@ -214,12 +214,64 @@ dvs.DataControl.getData("id-string")
 
 ## ViewerControl
 ### createViewer()
-### getViewerByUid()
-### getViewerByIndex()
-### removeViewer()
-### getViewerList()
-### dispose()
+- **Description:** Create a viewer according to configuration.If the second argument is passed, the viewer will async to the viewer specified by the second argument.
+- **Arguments:** 
+  - `{ object } config` - the configuration of the viewer to be created.
+  - `{ string } [syncViewerUid]` - the uid of the viewer to be synced, which is optional.
+- **Returns:** `{ Viewer }`
+- **Usage:**
+```js
+const viewer = dvs.ViewerControl.createViewer({/** config **/}, "syncViewerUidString");
+```
 
+### getViewerByUid()
+- **Description:** Get viewer by uid.If omit uid, it will get the default viewer.
+- **Arguments:** 
+  - `{ string } [uid]` - the uid of the viewer.
+- **Returns:** `{ Viewer }`
+- **Usage:**
+```js
+// 1. omit the argument
+const viewer0 = dvs.ViewerControl.getViewerByUid();
+
+// 2. don't omit the argument
+const viewer1 = dvs.ViewerControl.getViewerByUid("viewerUidString");
+```
+
+### getViewerByIndex()
+- **Description:** Get viewer by index.
+- **Arguments:** 
+  - `{ number } index` - the index of the viewer.
+- **Returns:** `{ Viewer }`
+- **Usage:**
+```js
+const viewer = dvs.ViewerControl.getViewerByIndex(1);
+```
+
+### removeViewer()
+- **Description:** Remove viewer from DVS. This api accept viewer uid or viewer instance as argument.
+- **Arguments:** 
+  - `{ string | Viewer } viewerUid | viewer ` - viewer uid or viewer instance.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+const viewer = dvs.ViewerControl.getViewerByIndex(1);
+
+// 1. pass viewer uid as the argument
+dvs.ViewerControl.removeViewer(viewer.uid);
+
+// 2. pass viewer as the argument
+dvs.ViewerControl.removeViewer(viewer);
+```
+
+### getViewerList()
+- **Description:** Get the list of all viewers in viewer manager.
+- **Returns:** `{ Array<Viewer> }`
+- **Usage:**
+```js
+const viewerList = dvs.ViewerControl.getViewerList();
+```
+### dispose()
 
 ## Viewer Methods
 ### getCurrentIndex()
@@ -231,18 +283,40 @@ const currentIndex = viewer.getCurrentIndex();
 ```
 
 ### setCurrentIndex()
-- **Description:** Remove a thumbnail instance from a viewer instance.
+- **Description:** Set the current index
 - **Arguments:** 
-  - `{ Thumbnail | string } thumbnail | uid` - the instance of thumbnail or the uid.
+  - `{ number } index` - the number of the index to be set as the current index.
 - **Returns:** `{ boolean }`
 - **Usage:**
 ```js
-const viewer = dvs.ViewerControl.getViewerByIndex(0);
-viewer.removeThumbnail();
+viewer.setCurrentIndex(1);
 ```
+
 ### getSelectedIndexes()
-### setCurrentIndexes()
+- **Description:** Get the selected page indexes, it is an array.
+- **Returns:** `{ Array<number> }` - an array of the selected page index
+- **Usage:**
+```js
+const currentIndex = viewer.getSelectedIndexes();
+```
+### setSelectedIndexes()
+- **Description:** Set the current index
+- **Arguments:** 
+  - `{ Array<number> } indexes` - the array of the selected page index.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+viewer.setSelectedIndexes([0, 1, 5]);
+```
+
 ### selectAll()
+- **Description:** Select all the pages in current viewer.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+viewer.selectAll();
+```
+
 ### removeAsync()
 ### removeAllSync()
 ### switchPage()
@@ -270,7 +344,6 @@ viewer.removeThumbnail();
 ### currentPageCount
 ### showLatestPage
 ### postfix
-
 
 
 

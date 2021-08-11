@@ -23,6 +23,6 @@ module.exports = {
             level: [2, 3, 4]
         }
     },
-    host: '192.168.8.129',
+    // host: '192.168.8.129',
     // open: true,
 }
