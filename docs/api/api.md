@@ -536,8 +536,27 @@ viewer.off(eventName, callback);
 viewer.off(eventName);
 ```
 ### setCache()
+- **Description:** This api will cache the events when invoking `setCache(true)`, all the cached events will be triggered after invoking `setCache(false)`.
+- **Arguments:** 
+  - `{ boolean } flag` - the flag whether to cache the events.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+viewer.setCache(true);
+viewer.emit(eventName, param);
+viewer.setCache(false);
+```
 
 ### setViewMode()
+- **Description:** Set the number of columns and rows when show pages on the main view.
+- **Arguments:** 
+  - `{ number } column` - the number of columns.
+  - `{ number } row` - the number of rows.
+- **Returns:** `{ boolean }`
+- **Usage:**
+```js
+viewer.setViewMode(2, 3); 
+```
 
 ## Viewer Properties
 ### tabMode

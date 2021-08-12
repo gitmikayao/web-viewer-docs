@@ -27,7 +27,7 @@ const log = dvsInstance.Log.clear();
 ### allowLog
 - **Description:** Enable collect the logs of DVS or not.
 - **Type:** `{ boolean }`
-- **Default:** true
+- **Default:** `true`
 - **Usage:**
 ```js
 // disable collect the logs
@@ -40,7 +40,7 @@ dvsInstance.Log.allowLog = true;
 ### logs
 - **Description:** An array of logs.
 - **Type:** `{ Array<Object> }`
-- **Default:** []
+- **Default:** `[]`
 - **Usage:**
 ```js
 const logs = dvsInstance.Log.logs;

@@ -20,7 +20,7 @@ const dvs = new DVS({
 ### errorMessage
 - **Description:** Get the last error message.
 - **Type:** `{ string }`
-- **Default:** 'ok.'
+- **Default:** `ok.`
 - **Usage:**
 ```js
 const msg = dvsInstance.Error.errorMessage
@@ -30,7 +30,7 @@ console.log(msg); // "ok."
 ### errorMessage
 - **Description:** Get the last error message.
 - **Type:** `{ number }`
-- **Default:** 0
+- **Default:** `0`
 - **Usage:**
 ```js
 const code = dvsInstance.Error.errorCode
