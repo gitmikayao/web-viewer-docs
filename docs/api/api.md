@@ -157,12 +157,12 @@ dvs.DataControl.insertSync(uid, {
 ```
 
 ### addData()
-- **Description:** Add some data to DVS storage.
+- **Description:** Save some data to DVS storage.
 - **Async:** `true`
 - **Arguments:** 
   - `{ string } uid` - the id of target data.
   - `{ any } data` - the data to be saved.
-- **Returns:** `{ Promise }`
+- **Returns:** `{ Promise<any> }`
 - **Usage:**
 ```js
 dvs.DataControl.addData("ids-string", {someData: true})
@@ -175,7 +175,7 @@ dvs.DataControl.addData("ids-string", {someData: true})
 - **Async:** `true`
 - **Arguments:** 
   - `{ string } uid` - the id of target data.
-- **Returns:** `{ Promise }` 
+- **Returns:** `{ Promise<any> }` 
 - **Usage:**
 ```js
 dvs.DataControl.getData("id-string")
@@ -189,7 +189,7 @@ dvs.DataControl.getData("id-string")
 - **Async:** `true`
 - **Arguments:** 
   - `{ string } uid` - the id of target data.
-- **Returns:** `{ Promise }`
+- **Returns:** `{ Promise<any> }`
 - **Usage:**
 ```js
 dvs.DataControl.removeData("id-string")
@@ -203,7 +203,7 @@ dvs.DataControl.removeData("id-string")
 - **Arguments:** 
   - `{ string } uid` - the id of target data.
   - `{ any } newData` - the new data.
-- **Returns:** `{ Promise }`
+- **Returns:** `{ Promise<any> }`
 - **Usage:**
 ```js
 dvs.DataControl.updateData("id-string",{someData: true})
@@ -249,7 +249,7 @@ const viewer = dvs.ViewerControl.getViewerByIndex(1);
 ```
 
 ### removeViewer()
-- **Description:** Remove viewer from DVS. This api accept viewer uid or viewer instance as argument.
+- **Description:** Remove a viewer from DVS. This api accept viewer uid or viewer instance as argument.
 - **Arguments:** 
   - `{ string | Viewer } viewerUid | viewer ` - viewer uid or viewer instance.
 - **Returns:** `{ boolean }`
@@ -275,7 +275,7 @@ const viewerList = dvs.ViewerControl.getViewerList();
 
 ## Viewer Methods
 ### getCurrentIndex()
-- **Description:** Get current index.
+- **Description:** Get the index of the current page.
 - **Returns:** `{ number }`
 - **Usage:**
 ```js
@@ -300,7 +300,7 @@ viewer.setCurrentIndex(1);
 const currentIndex = viewer.getSelectedIndexes();
 ```
 ### setSelectedIndexes()
-- **Description:** Set the current index.
+- **Description:** Set the selected indexes.
 - **Arguments:** 
   - `{ Array<number> } indexes` - the array of the selected page index.
 - **Returns:** `{ boolean }`
@@ -456,7 +456,7 @@ console.log(metadata); // {width: 500, height: 500}
 - **Description:** Set the metadata of the page specified by the index.
 - **Arguments:** 
   - `{ number } index` - the index of the page.
-  - `{ metadata } new metadata` - the new metadata of the page.
+  - `{ metadata } metadata` - the new metadata of the page.
     - `metadata:`
       - `width: number`
       - `height: number`

@@ -37,9 +37,9 @@ viewer.rotate(90, [ 0, 2, 5 ]);
 ```
 
 ### flip()
-- **Description:** Flip the pages according to the index.
+- **Description:** Flip the pages specified by the indexes.
 - **Arguments:** 
-  - `{ number | Array<number> } [index] | [indexes]` - the indexes of the rotated pages.
+  - `{ number | Array<number> } | [indexes]` - the indexes of the rotated pages.
 - **Returns:** `{ boolean }`
 - **Usage:**
 ```js
@@ -57,7 +57,7 @@ viewer.flip([ 0, 2, 5 ]);
 ### mirror()
 - **Description:** Mirror the pages according to the index.
 - **Arguments:** 
-  - `{ number | Array<number> } [index] | [indexes]` - the indexes of the rotated pages.
+  - `{ number | Array<number> } [indexes]` - the indexes of the mirrored pages.
 - **Returns:** `{ boolean }`
 - **Usage:**
 ```js
@@ -75,8 +75,8 @@ viewer.mirror([ 0, 2, 5 ]);
 ### crop()
 - **Description:** Crop the page.
 - **Arguments:** 
-  - `{ number } left` - the distance between the left side of crop box and the left side of the page.
-  - `{ number } top` - the distance between the top side of crop box and the top side of the page.
+  - `{ number } left` - the left side distance between the crop box and the page.
+  - `{ number } top` - the top side distance between the crop box and the page.
   - `{ number } width` - the width of the crop box.
   - `{ number } height` - the height of the crop box.
 - **Returns:** `{ boolean }`
@@ -88,7 +88,7 @@ viewer.crop(50, 50, 100, 100);
 ```
 
 ### changePageSize()
-- **Description:** Crop the page.
+- **Description:** Change the page size.
 - **Arguments:** 
   - `{ number } width` - the new width of the current page.
   - `{ number } height` - the new height of the current page.
